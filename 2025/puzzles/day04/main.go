@@ -16,16 +16,8 @@ func main() {
 	fmt.Println("Part 2: ", part2(lines))
 }
 
-func toGrid(lines []string) [][]rune {
-	grid := make([][]rune, len(lines))
-	for i, line := range lines {
-		grid[i] = []rune(line)
-	}
-	return grid
-}
-
 func part1(lines []string) int {
-	grid := toGrid(lines)
+	grid := helpers.ToGrid(lines)
 	rows, cols := len(grid), len(grid[0])
 	sum := 0
 
@@ -62,7 +54,7 @@ func part1(lines []string) int {
 }
 
 func part2(lines []string) int {
-	grid := toGrid(lines)
+	grid := helpers.ToGrid(lines)
 	rows, cols := len(grid), len(grid[0])
 	sum := 0
 	var changed bool

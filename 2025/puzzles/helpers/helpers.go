@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strings"
 )
 
 func MustLines(path string) []string {
@@ -22,4 +23,20 @@ func MustLines(path string) []string {
 		log.Fatal(err)
 	}
 	return lines
+}
+
+func ToGrid(lines []string) [][]rune {
+	grid := make([][]rune, len(lines))
+	for i, line := range lines {
+		grid[i] = []rune(line)
+	}
+	return grid
+}
+
+func ToGrid2(lines []string) [][]string {
+	grid := make([][]string, len(lines))
+	for i, line := range lines {
+		grid[i] = strings.Fields(line)
+	}
+	return grid
 }

@@ -47,22 +47,6 @@ func part1(lines []string) int {
 	return sum
 }
 
-type IntSet map[int]struct{}
-
-func NewIntSet() IntSet {
-	return make(IntSet)
-}
-
-func (s IntSet) Add(item int) {
-	s[item] = struct{}{}
-}
-
-// set with lo and hi
-// first iteration set them
-// s: [3,5]
-// s: [3,5,10,14]
-// s: [3,5,10,14,16,20]
-// s: [3,5,10,14,14]
 func part2(lines []string) int {
 	var ranges [][2]int
 
